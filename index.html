@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Galaxia En Casa - Estilo Galaga</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <div class="score">Puntuación: <span id="score">0</span></div>
+            <div class="lives">Vidas: <span id="lives">3</span></div>
+            <div class="level">Nivel: <span id="level">1</span></div>
+            <div class="highscore">Highscore: <span id="highScore">4750</span></div>
+            <button id="pauseBtn" class="pause-control" type="button">PAUSA</button>
+        </div>
+
+        <div class="start-screen active" id="startScreen">
+            <h2>GALAXIA EN CASA</h2>
+            <p class="start-badge">High Score 4750 pts | Nivel 10</p>
+            <div class="player-form access-panel">
+                <h3 class="panel-title">Acceso de Jugador</h3>
+                <div class="entry-grid">
+                    <div class="input-group">
+                        <label for="playerNameInput">Nombre</label>
+                        <input type="text" id="playerNameInput" maxlength="14" placeholder="Escribe un nombre" autocomplete="off">
+                    </div>
+                    <div class="entry-separator">o</div>
+                    <div class="input-group">
+                        <label for="playerCodeInput">Codigo ID (3 digitos)</label>
+                        <input type="text" id="playerCodeInput" maxlength="3" inputmode="numeric" pattern="[0-9]*" placeholder="001" autocomplete="off">
+                    </div>
+                </div>
+                <p class="entry-hint">Puedes entrar con nombre o con codigo. Si escribes ambos, deben coincidir.</p>
+                <p id="nameError" class="name-error">Debes escribir nombre o codigo para comenzar.</p>
+            </div>
+            <h3>Tabla de Posiciones</h3>
+            <table class="ranking-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Jugador</th>
+                        <th>High Score</th>
+                        <th>Codigo</th>
+                    </tr>
+                </thead>
+                <tbody id="startLeaderboardBody"></tbody>
+            </table>
+            <button id="startGameBtn">Entrar a Jugar</button>
+        </div>
+
+        <canvas id="gameCanvas"></canvas>
+        <div class="game-over" id="gameOver">
+            <h2>GAME OVER</h2>
+            <p>Puntuación Final: <span id="finalScore">0</span></p>
+            <p>Nivel Alcanzado: <span id="finalLevel">1</span> | Vidas Restantes: <span id="finalLives">0</span></p>
+            <h3>Tabla de Posiciones</h3>
+            <table class="ranking-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Jugador</th>
+                        <th>High Score</th>
+                        <th>Codigo</th>
+                    </tr>
+                </thead>
+                <tbody id="endLeaderboardBody"></tbody>
+            </table>
+            <button id="restartBtn">Nueva Partida</button>
+        </div>
+        <div class="instructions">
+            <h3>Controles:</h3>
+            <p>Mouse/touch mueve la nave | Clic derecho o toque dispara | Boton PAUSA en pantalla | Flechas/ESPACIO/P tambien funcionan</p>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
