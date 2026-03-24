@@ -1,0 +1,18 @@
+{
+  "name": "Galaxia En Casa",
+  "short_name": "GalaxiaEnCasa",
+  "description": "Juego estilo Galaga - Defiende la galaxia desde casa",
+  "start_url": "./index.html",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "background_color": "#000428",
+  "theme_color": "#00ff00",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
