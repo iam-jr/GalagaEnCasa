@@ -160,7 +160,6 @@ const mouse = {
     insideCanvas: false,
     rightDown: false
 };
-let lastTouchTapTime = 0;
 
 function clamp(value, min, max) {
     return Math.max(min, Math.min(max, value));
@@ -1132,14 +1131,6 @@ canvas.addEventListener('touchstart', (e) => {
         return;
     }
 
-    const now = Date.now();
-    if (now - lastTouchTapTime < 280) {
-        paused = !paused;
-        lastTouchTapTime = 0;
-        return;
-    }
-
-    lastTouchTapTime = now;
     shootPlayerBullet();
 }, { passive: false });
 
